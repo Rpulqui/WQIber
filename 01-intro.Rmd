@@ -1,0 +1,17 @@
+# Introducción {#intro}
+
+Iber es un modelo numérico de simulación de flujo turbulento en lámina libre en régimen no-permanente, y de procesos medioambientales en hidráulica fluvial. El modelo consta de distintos módulos entre los que se encuentran los siguientes: **hidrodinámica**,  **calidad de aguas**, **turbulencia**, **transporte de sedimentos por carga de fondo y en suspensión**. Todos los módulos están basados en ecuaciones de transporte bidimensionales promediadas en profundidad.
+En este manual se realiza una descripción de las ecuaciones y modelos incluidos en el módulo de calidad de aguas de Iber, el cual permite predecir la evolución temporal y espacial de las concentraciones de las siguientes variables:
+
++ Temperatura
++ Salinidad
++ Demanda biológica de oxígeno carbonosa
++ Nitrógeno (orgánico, amoniacal, nitritos y nitratos)
++ Fósforo (orgánico e inorgánico)
++ Fitoplancton
++ Oxígeno disuelto
++ Escherichia Coli (E. Coli)
++ pH 
++ Metales
+
+El módulo de calidad de aguas de Iber ha sido desarrollado en su totalidad por miembros del Grupo de Ingeniería del Agua y del Medio Ambiente [(GEAMA)](http://www.geama.org/) de la Universidade da Coruña ([UdC](https://www.udc.es/)) y del Instituto FLUMEN (Universitat Politécnica de Catalunya, [UPC](https://www.upc.edu/es), y Centro Internacional de Métodos Numéricos en Ingeniería, [CIMNE](https://www.cimne.com/)).
