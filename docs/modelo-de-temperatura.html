@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Modelo de Salinidad | Módulo Calidad de Aguas Iber</title>
-  <meta name="description" content="Chapter 3 Modelo de Salinidad | Módulo Calidad de Aguas Iber" />
+  <title>Chapter 4 Modelo de temperatura | Módulo Calidad de Aguas Iber</title>
+  <meta name="description" content="Chapter 4 Modelo de temperatura | Módulo Calidad de Aguas Iber" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Modelo de Salinidad | Módulo Calidad de Aguas Iber" />
+  <meta property="og:title" content="Chapter 4 Modelo de temperatura | Módulo Calidad de Aguas Iber" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Modelo de Salinidad | Módulo Calidad de Aguas Iber" />
+  <meta name="twitter:title" content="Chapter 4 Modelo de temperatura | Módulo Calidad de Aguas Iber" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="esquema-del-módulo-de-calidad-de-aguas.html"/>
-<link rel="next" href="modelo-de-temperatura.html"/>
+<link rel="prev" href="modelo-de-salinidad.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -100,14 +100,22 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modelo-de-salinidad" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Modelo de Salinidad</h1>
-<p>El modelo de salinidad resuelve la ecuación de transporte de sal promediada en profundidad en régimen no permanente, utilizando para ello el campo de velocidades y de turbulencia proporcionado por los módulos correspondientes. Como la sal es una sustancia conservativa (no reacciona con otras sustancias), la ecuación de transporte correspondiente a la salinidad no incluye términos fuente:</p>
-<p><span class="math display" id="eq:Salinidad">\[\begin{equation}
-S_c=0
-\tag{3.1}
+<div id="modelo-de-temperatura" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Modelo de temperatura</h1>
+<p>Además del propio interés que puede tener predecir la temperatura del agua para evitar la contaminación térmica, todas las reacciones bioquímicas que afectan a la concentración de los distintos componentes del modelo dependen de la temperatura.</p>
+<p>En el modelo de temperatura el término fuente incluido en la ecuación de conservación del calor promediada en profundidad es el siguiente:</p>
+<p><span class="math display" id="eq:St">\[\begin{equation}
+S_T=\frac{Q}{\rho C_{pw}}
+
+\tag{4.1}
 \end{equation}\]</span></p>
-<p>La ecuación de transporte de sal asume una mezcla perfecta en profundidad de la sal (concentración de sal constante en la vertical), lo cual no es válido en estuarios estratificados, en donde se produce un flujo bicapa en el que el agua dulce del río, más ligera, fluye sobre el agua de mar más pesada, produciéndose gradientes de salinidad y velocidad importantes en la vertical.</p>
+<p>donde <span class="math inline">\(C_{pw}\)</span> es el calor específico del agua, <span class="math inline">\(\rho\)</span> es la densidad del agua y <span class="math inline">\(q\)</span> es el flujo neto de calor entre aire y agua. El término <span class="math inline">\(S_T\)</span> representa las transferencias de calor a través de la interface aire-agua. Este intercambio de calor puede realizarse por radiación, evaporación y conducción, siendo el flujo neto de calor q la suma algebraica de los diversos flujos de energía:</p>
+<p><span class="math display" id="eq:Q">\[\begin{equation}
+Q= Q_{rad} - Q_{br} - Q_{cond} - Q_{evap}
+
+\tag{4.2}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(q_{rad}\)</span> es la radiación neta incidente (W/m2), que comprende la radiación solar de onda corta y la radiación atmosférica de onda larga, <span class="math inline">\(q_{br}\)</span> es la radiación de onda larga emitida por el agua, <span class="math inline">\(q_{cond}\)</span> es el calor transferido por conducción entre el aire y el agua y <span class="math inline">\(q_{evap}\)</span> es la transferencia de energía por evaporación/condensación del agua. A continuación se detalla cómo se calculan e introducen dichos términos en Iber.</p>
 
 </div>
             </section>
@@ -115,8 +123,8 @@ S_c=0
           </div>
         </div>
       </div>
-<a href="esquema-del-módulo-de-calidad-de-aguas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="modelo-de-temperatura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="modelo-de-salinidad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -147,7 +155,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Rpulqui/WQIber/edit/master/03-modelo_salinidad.Rmd",
+"link": "https://github.com/Rpulqui/WQIber/edit/master/04-modelo_temperatura.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -155,7 +163,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Rpulqui/WQIber/blob/master/03-modelo_salinidad.Rmd",
+"link": "https://github.com/Rpulqui/WQIber/blob/master/04-modelo_temperatura.Rmd",
 "text": null
 },
 "download": null,

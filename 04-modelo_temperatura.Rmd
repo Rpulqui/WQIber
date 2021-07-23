@@ -1,0 +1,27 @@
+# Modelo de temperatura
+
+
+Además del propio interés que puede tener predecir la temperatura del agua para evitar la contaminación térmica, todas las reacciones bioquímicas que afectan a la concentración de los distintos componentes del modelo dependen de la temperatura.
+
+En el modelo de temperatura el término fuente incluido en la ecuación de conservación del calor promediada en profundidad es el siguiente:
+
+\begin{equation}
+S_T=\frac{Q}{\rho C_{pw}}
+
+(\#eq:St)
+\end{equation}
+
+
+
+donde $C_{pw}$ es el calor específico del agua, $\rho$ es la densidad del agua y $q$ es el flujo neto de calor entre aire y agua. El término $S_T$ representa las transferencias de calor a través de la interface aire-agua. Este intercambio de calor puede realizarse por radiación, evaporación y conducción, siendo el flujo neto de calor q la suma algebraica de los diversos flujos de energía:
+
+\begin{equation}
+Q= Q_{rad} - Q_{br} - Q_{cond} - Q_{evap}
+
+(\#eq:Q)
+\end{equation}
+
+
+
+
+donde $q_{rad}$ es la radiación neta incidente (W/m2), que comprende la radiación solar de onda corta y la radiación atmosférica de onda larga, $q_{br}$ es la radiación de onda larga emitida por el agua, $q_{cond}$ es el calor transferido por conducción entre el aire y el agua y $q_{evap}$ es la transferencia de energía por evaporación/condensación del agua. A continuación se detalla cómo se calculan e introducen dichos términos en Iber.
