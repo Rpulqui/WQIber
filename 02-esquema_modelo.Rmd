@@ -78,7 +78,7 @@ D_l= \frac{H^4}{T^2\Gamma_2}f_v
 
 
 \begin{equation}
-\Gamma_e = \Gamma_m+ \frac{\nu_t}{S_c}
+\Gamma_e = \Gamma_m + \frac{\nu_t}{S_c}
 (\#eq:Gammae)
 \end{equation}
 
