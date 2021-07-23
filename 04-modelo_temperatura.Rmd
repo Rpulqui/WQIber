@@ -22,12 +22,12 @@ Q= Q_{rad} - Q_{br} - Q_{cond} - Q_{evap}
 \end{equation}
 
 
-donde $q_{rad}$ es la radiación neta incidente (W/m2), que comprende la radiación solar de onda corta y la radiación atmosférica de onda larga, $q_{br}$ es la radiación de onda larga emitida por el agua, $q_{cond}$ es el calor transferido por conducción entre el aire y el agua y $q_{evap}$ es la transferencia de energía por evaporación/condensación del agua. A continuación se detalla cómo se calculan e introducen dichos términos en Iber.
+donde $q_{rad}$ es la radiación neta incidente ($W/m^42$), que comprende la radiación solar de onda corta y la radiación atmosférica de onda larga, $q_{br}$ es la radiación de onda larga emitida por el agua, $q_{cond}$ es el calor transferido por conducción entre el aire y el agua y $q_{evap}$ es la transferencia de energía por evaporación/condensación del agua. A continuación se detalla cómo se calculan e introducen dichos términos en Iber.
 
 
 ## Radiación neta incidente
 
-El valor de la radiación neta incidente a través de la superficie del agua debe imponerlo directamente el usuario como dato de entrada en W/m2. Dicha radiación comprende la radiación solar neta de onda corta y la radiación atmosférica neta de onda larga y es siempre un flujo de calor positivo (aumenta la temperatura de la masa de agua).
+El valor de la radiación neta incidente a través de la superficie del agua debe imponerlo directamente el usuario como dato de entrada en $W/m^2$. Dicha radiación comprende la radiación solar neta de onda corta y la radiación atmosférica neta de onda larga y es siempre un flujo de calor positivo (aumenta la temperatura de la masa de agua).
 
 
 ## Radiación de onda larga emitida por el agua
@@ -60,7 +60,7 @@ f(v_{viento})=19+0.95v^2_{viento 7m}
 \end{equation}
 
 
-## Transferencia de energía en la evaporación/condensación del agua
+## Transferencia de energía en la evaporación y condensación del agua
 
 La transferencia de energía en la evaporación/condensación se calcula mediante la ley de Dalton:
 
