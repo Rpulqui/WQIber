@@ -19,3 +19,4 @@ términos-de-dispersión-por-oleaje-1
 example-one
 example-two
 final-words
+eq:Gammae
