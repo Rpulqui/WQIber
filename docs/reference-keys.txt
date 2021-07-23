@@ -18,3 +18,5 @@ términos-de-dispersión-por-oleaje
 términos-fuente
 modelo-de-salinidad
 modelo-de-temperatura
+fig:rmarkdown
+fig:esquema

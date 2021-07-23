@@ -1,9 +1,13 @@
 # Esquema del Módulo de Calidad de Aguas
 
-Para plantear totalmente el problema de la evolución de un contaminante se deben considerar simultáneamente todas las especies que interaccionan entre sí mediante fenómenos físicos, químicos o biológicos. No obstante, en ocasiones es posible despreciar ciertos procesos, bien por su escasa influencia en un caso concreto o bien en una primera aproximación al problema. La Figura 1 muestra de forma esquemática la interacción entre las distintas componentes del módulo de calidad de aguas de Iber.
+Para plantear totalmente el problema de la evolución de un contaminante se deben considerar simultáneamente todas las especies que interaccionan entre sí mediante fenómenos físicos, químicos o biológicos. No obstante, en ocasiones es posible despreciar ciertos procesos, bien por su escasa influencia en un caso concreto o bien en una primera aproximación al problema. La Figura \@ref(fig:esquema) muestra de forma esquemática la interacción entre las distintas componentes del módulo de calidad de aguas de Iber.
 
 
-![Esquema completo del modelo de calidad de aguas. Las flechas indican generación/destrucción/transformación de variables. La salinidad y la alcalinidad se modelan como variables conservativas.](images/modelo_conceptual_Iber.png)
+
+
+```{r esquema,echo=FALSE, out.width='100%', fig.align='center', fig.cap='Esquema completo del modelo de calidad de aguas. Las flechas indican generación/destrucción/transformación de variables. La salinidad y la alcalinidad se modelan como variables conservativas..'}
+knitr::include_graphics("images/modelo_conceptual_Iber.png")
+```
 
 
 La temperatura del agua influye en prácticamente todas las cinéticas de reacción que se muestran en la Figura 1. Es posible calcularla en el modelo a partir de datos meteorológicos o bien introducirla como dato de entrada. Por su parte, la salinidad influye en la concentración de saturación de oxígeno disuelto y en la tasa de desaparición bacteriana, y puede asimismo calcularse con el modelo o introducirse como dato por el usuario.
