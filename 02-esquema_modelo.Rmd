@@ -72,7 +72,7 @@ longitudinal $D_l$ como:
 
 
 \begin{equation}
-D_l= \frac{H^4}{T^2\Gamma_2}f_v\Gamma_e = \Gamma_m+ \frac{\nu_t}{S_c}
+D_l= \frac{H^4}{T^2\Gamma_2}f_v
 (\#eq:Dl)
 \end{equation}
 
