@@ -5,9 +5,9 @@ eq:Dxx
 eq:Dxy
 eq:Dyy
 eq:Dl
+eq:Gammae
 eq:Sc
 eq:arrhenius
-down-the-rabbit-hole
 intro
 esquema-del-módulo-de-calidad-de-aguas
 ecuaciones-de-transporte
@@ -19,4 +19,3 @@ términos-de-dispersión-por-oleaje-1
 example-one
 example-two
 final-words
-eq:Gammae
