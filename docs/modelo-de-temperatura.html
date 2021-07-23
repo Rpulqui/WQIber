@@ -79,7 +79,13 @@
 <li class="chapter" data-level="2.3" data-path="esquema-del-módulo-de-calidad-de-aguas.html"><a href="esquema-del-módulo-de-calidad-de-aguas.html#términos-fuente"><i class="fa fa-check"></i><b>2.3</b> Términos fuente</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="modelo-de-salinidad.html"><a href="modelo-de-salinidad.html"><i class="fa fa-check"></i><b>3</b> Modelo de Salinidad</a></li>
-<li class="chapter" data-level="4" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html"><i class="fa fa-check"></i><b>4</b> Modelo de temperatura</a></li>
+<li class="chapter" data-level="4" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html"><i class="fa fa-check"></i><b>4</b> Modelo de temperatura</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#radiación-neta-incidente"><i class="fa fa-check"></i><b>4.1</b> Radiación neta incidente</a></li>
+<li class="chapter" data-level="4.2" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#radiación-de-onda-larga-emitida-por-el-agua"><i class="fa fa-check"></i><b>4.2</b> Radiación de onda larga emitida por el agua</a></li>
+<li class="chapter" data-level="4.3" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#calor-transferido-por-conducción-entre-el-aire-y-el"><i class="fa fa-check"></i><b>4.3</b> Calor transferido por conducción entre el aire y el</a></li>
+<li class="chapter" data-level="4.4" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#transferencia-de-energía-en-la-evaporacióncondensación-del-agua"><i class="fa fa-check"></i><b>4.4</b> Transferencia de energía en la evaporación/condensación del agua</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -116,7 +122,58 @@ Q= Q_{rad} - Q_{br} - Q_{cond} - Q_{evap}
 \tag{4.2}
 \end{equation}\]</span></p>
 <p>donde <span class="math inline">\(q_{rad}\)</span> es la radiación neta incidente (W/m2), que comprende la radiación solar de onda corta y la radiación atmosférica de onda larga, <span class="math inline">\(q_{br}\)</span> es la radiación de onda larga emitida por el agua, <span class="math inline">\(q_{cond}\)</span> es el calor transferido por conducción entre el aire y el agua y <span class="math inline">\(q_{evap}\)</span> es la transferencia de energía por evaporación/condensación del agua. A continuación se detalla cómo se calculan e introducen dichos términos en Iber.</p>
+<div id="radiación-neta-incidente" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Radiación neta incidente</h2>
+<p>El valor de la radiación neta incidente a través de la superficie del agua debe imponerlo directamente el usuario como dato de entrada en W/m2. Dicha radiación comprende la radiación solar neta de onda corta y la radiación atmosférica neta de onda larga y es siempre un flujo de calor positivo (aumenta la temperatura de la masa de agua).</p>
+</div>
+<div id="radiación-de-onda-larga-emitida-por-el-agua" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Radiación de onda larga emitida por el agua</h2>
+<p>La radiación de onda larga emitida por el agua (qbr) se calcula con la Ley de Stefan-Boltzmann:</p>
+<p><span class="math display" id="eq:Q">\[\begin{equation}
+q_{br}=\varepsilon \sigma T^4
 
+\tag{4.2}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(T\)</span> es la temperatura del agua en grados Kelvin, <span class="math inline">\(\varepsilon\)</span> es el factor de emisividad del agua (=0.97) y <span class="math inline">\(\sigma\)</span> es la constante de Stefan-Boltzmann (=<span class="math inline">\(5.669·10^{-8}\)</span> <span class="math inline">\(W/(m^2K^2)\)</span>)</p>
+</div>
+<div id="calor-transferido-por-conducción-entre-el-aire-y-el" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Calor transferido por conducción entre el aire y el</h2>
+<p>El calor transferido por conducción se calcula mediante la siguiente expresión:</p>
+<p><span class="math display" id="eq:Qcond">\[\begin{equation}
+q_{cond} = c_1 f(v_{viento})(T-T_{aire}) 
+\tag{4.3}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(q_{cond}\)</span> es el calor transferido por conducción entre el aire y el agua expresado en <span class="math inline">\(cal/cm^2/d\)</span>, <span class="math inline">\(c_1\)</span> es el coeficiente de Bowen (=0.47 mmHg/°C) (Chapra, 1997), <span class="math inline">\(f(v_{viento)}\)</span> es una función que define la dependencia de la transferencia de calor con la velocidad del viento, <span class="math inline">\(T\)</span> es la temperatura del agua y <span class="math inline">\(T_{aire}\)</span> la temperatura del aire. La función <span class="math inline">\(f(v_{viento})\)</span> se calcula con la formulación de Brady et al. (1969) a partir de la velocidad del viento en <span class="math inline">\(m/s\)</span> a 7m de altura como:</p>
+<p><span class="math display" id="eq:fv">\[\begin{equation}
+f(v_{viento})=19+0.95v^2_{viento 7m}
+\tag{4.4}
+\end{equation}\]</span></p>
+</div>
+<div id="transferencia-de-energía-en-la-evaporacióncondensación-del-agua" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Transferencia de energía en la evaporación/condensación del agua</h2>
+<p>La transferencia de energía en la evaporación/condensación se calcula mediante la ley de Dalton:</p>
+<p><span class="math display" id="eq:qevap">\[\begin{equation}
+q_{evap} = f(v_{viento}) (e_{agua}-e_{aire})
+\tag{4.5}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:fviento">\[\begin{equation}
+f(v_{viento}) = 19+0.95v^2_{viento 7m}
+\tag{4.6}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(q_{evap}\)</span> es la energía empleada por evaporación del agua expresada en <span class="math inline">\(cal/cm^2/d\)</span>, <span class="math inline">\(e_{agua}\)</span> es la presión de vapor de saturación a la temperatura del agua en mmHg, y <span class="math inline">\(e_{aire}\)</span> es la presión de vapor del aire en mmHg. Ambas presiones de vapor se calculan según Raudkivi (1979) como:</p>
+<p><span class="math display" id="eq:eagua">\[\begin{equation}
+e_{agua}=4.596 \cdot e^{\frac{17.27T}{237.3+T}}
+
+\tag{4.7}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:eagua">\[\begin{equation}
+e_{aire}=4.596 \cdot \xi \cdot e^{\frac{17.27T_{aire}}{237.3+T_{aire}}}
+
+\tag{4.7}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(\xi\)</span> es la humedad relativa del aire en tanto por uno</p>
+
+</div>
 </div>
             </section>
 

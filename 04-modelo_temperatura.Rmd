@@ -22,6 +22,76 @@ Q= Q_{rad} - Q_{br} - Q_{cond} - Q_{evap}
 \end{equation}
 
 
-
-
 donde $q_{rad}$ es la radiación neta incidente (W/m2), que comprende la radiación solar de onda corta y la radiación atmosférica de onda larga, $q_{br}$ es la radiación de onda larga emitida por el agua, $q_{cond}$ es el calor transferido por conducción entre el aire y el agua y $q_{evap}$ es la transferencia de energía por evaporación/condensación del agua. A continuación se detalla cómo se calculan e introducen dichos términos en Iber.
+
+
+## Radiación neta incidente
+
+El valor de la radiación neta incidente a través de la superficie del agua debe imponerlo directamente el usuario como dato de entrada en W/m2. Dicha radiación comprende la radiación solar neta de onda corta y la radiación atmosférica neta de onda larga y es siempre un flujo de calor positivo (aumenta la temperatura de la masa de agua).
+
+
+## Radiación de onda larga emitida por el agua
+
+La radiación de onda larga emitida por el agua (qbr) se calcula con la Ley de Stefan-Boltzmann:
+
+\begin{equation}
+q_{br}=\varepsilon \sigma T^4
+
+(\#eq:Q)
+\end{equation}
+
+donde $T$ es la temperatura del agua en grados Kelvin, $\varepsilon$ es el factor de emisividad del agua (=0.97) y $\sigma$ es la constante de Stefan-Boltzmann (=$5.669·10^{-8}$ $W/(m^2K^2)$)
+
+## Calor transferido por conducción entre el aire y el 
+
+El calor transferido por conducción se calcula mediante la siguiente expresión:
+
+\begin{equation}
+q_{cond} = c_1 f(v_{viento})(T-T_{aire}) 
+(\#eq:Qcond)
+\end{equation}
+
+donde $q_{cond}$ es el calor transferido por conducción entre el aire y el agua expresado en $cal/cm^2/d$, $c_1$ es el coeficiente de Bowen (=0.47 mmHg/°C) (Chapra, 1997), $f(v_{viento)}$ es una función que define la dependencia de la transferencia de calor con la velocidad del viento, $T$ es la temperatura del agua y $T_{aire}$ la temperatura del aire. La función $f(v_{viento})$ se calcula con la formulación de Brady et al. (1969) a partir de la velocidad del viento en $m/s$ a 7m de altura como:
+
+
+\begin{equation}
+f(v_{viento})=19+0.95v^2_{viento 7m}
+(\#eq:fv)
+\end{equation}
+
+
+## Transferencia de energía en la evaporación/condensación del agua
+
+La transferencia de energía en la evaporación/condensación se calcula mediante la ley de Dalton:
+
+\begin{equation}
+q_{evap} = f(v_{viento}) (e_{agua}-e_{aire})
+(\#eq:qevap)
+\end{equation}
+
+\begin{equation}
+f(v_{viento}) = 19+0.95v^2_{viento 7m}
+(\#eq:fviento)
+\end{equation}
+
+donde $q_{evap}$ es la energía empleada por evaporación del agua expresada en $cal/cm^2/d$, $e_{agua}$ es la presión de vapor de saturación a la temperatura del agua en mmHg, y $e_{aire}$ es la presión de vapor del aire en mmHg. Ambas presiones de vapor se calculan según Raudkivi (1979) como:
+
+
+\begin{equation}
+e_{agua}=4.596 \cdot e^{\frac{17.27T}{237.3+T}}
+
+(\#eq:eagua)
+\end{equation}
+
+
+\begin{equation}
+e_{aire}=4.596 \cdot \xi \cdot e^{\frac{17.27T_{aire}}{237.3+T_{aire}}}
+
+(\#eq:eagua)
+\end{equation}
+
+
+
+
+donde $\xi$ es la humedad relativa del aire en tanto por uno
+

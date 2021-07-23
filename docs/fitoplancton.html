@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>References | Módulo Calidad de Aguas Iber</title>
-  <meta name="description" content="References | Módulo Calidad de Aguas Iber" />
+  <title>Chapter 5 Fitoplancton | Módulo Calidad de Aguas Iber</title>
+  <meta name="description" content="Chapter 5 Fitoplancton | Módulo Calidad de Aguas Iber" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="References | Módulo Calidad de Aguas Iber" />
+  <meta property="og:title" content="Chapter 5 Fitoplancton | Módulo Calidad de Aguas Iber" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="References | Módulo Calidad de Aguas Iber" />
+  <meta name="twitter:title" content="Chapter 5 Fitoplancton | Módulo Calidad de Aguas Iber" />
   
   
   
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="modelo-de-temperatura.html"/>
-
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -86,6 +86,7 @@
 <li class="chapter" data-level="4.3" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#calor-transferido-por-conducción-entre-el-aire-y-el"><i class="fa fa-check"></i><b>4.3</b> Calor transferido por conducción entre el aire y el</a></li>
 <li class="chapter" data-level="4.4" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#transferencia-de-energía-en-la-evaporacióncondensación-del-agua"><i class="fa fa-check"></i><b>4.4</b> Transferencia de energía en la evaporación/condensación del agua</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="fitoplancton.html"><a href="fitoplancton.html"><i class="fa fa-check"></i><b>5</b> Fitoplancton</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -106,8 +107,48 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
+<div id="fitoplancton" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Fitoplancton</h1>
+<p>Se denomina <strong>fitoplancton</strong> al conjunto de los organismos del plancton que tienen <strong>capacidad fotosintética</strong>. Se estudian como algas, pero se clasifican como bacterias o protistas. El grupo más grande que existe es el de las diatomeas.
+Esta comunidad de organismos microscópicos es la base de la cadena de alimentación de los ecosistemas acuáticos. Además, es el principal responsable de la producción de oxígeno en el planeta.</p>
+<div class="figure" style="text-align: center"><span id="fig:fitoplancton"></span>
+<img src="images/fitoplancton.jpg" alt="El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que liberan contaminando los ecosistemas marinos" width="80%" />
+<p class="caption">
+Figure 5.1: El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que liberan contaminando los ecosistemas marinos
+</p>
+</div>
+<p>El fitoplancton es uno de los componentes centrales del módulo de calidad de aguas ya que influye, por medio de los procesos de fotosíntesis, respiración y muerte, en los balances de masas de los siguientes componentes:</p>
+<ul>
+<li>Oxígeno disuelto</li>
+<li>Nitrógeno orgánico</li>
+<li>Nitrógeno amoniacal</li>
+<li>Nitratos</li>
+<li>Fósforo orgánico e inorgánico</li>
+<li>Carbono inorgánico</li>
+</ul>
+<p>En el caso de no existir fitoplancton o de no modelarse, los procesos anteriores no se consideran en el modelo, pudiéndose en cualquier caso calcular el resto de sustancias sin considerar el fitoplancton. Por lo tanto, no es imprescindible activar el módelo de fitoplancton para calcular el resto de componentes del módulo de calidad de aguas.</p>
+<p>El fitoplancton se representa en el modelo por medio de la concentración de clorofila-A (Chl-A). Si se modela el fitoplancton es necesario que el usuario defina su estequiometría, i.e. la relación entre nitrógeno, fósforo, carbono y Chl-A en el fitoplancton, ya que de ello dependen los balances de masa de dichos componentes del modelo. Los ratios que es necesario definir son los siguiente:</p>
+<p><span class="math display">\[ r_{na}=\frac{mg \ N}{mg\ A} \]</span><br />
+<span class="math display">\[ r_{pa}=\frac{mg \ P}{mg A} \]</span><br />
+<span class="math display">\[ r_{na}=\frac{mg\ N}{mg \ A} \]</span>
+donde <span class="math inline">\(N\)</span>, <span class="math inline">\(P\)</span>, <span class="math inline">\(O\)</span>, <span class="math inline">\(C\)</span> y <span class="math inline">\(A\)</span> representan la masa seca de nitrógeno, fósforo, oxígeno, carbono y Chl-A en el fitoplancton.
+Asimismo, el usuario debe definir la masa de oxígeno generada/consumida por cada gramo de fitoplancton durante los procesos de fotosíntesis y respiración del fitoplancton:</p>
+<p><span class="math display">\[ r_{oa}=\frac{mg\ O}{mg \ A} \]</span></p>
+<p>En función del sustrato utilizado en la fotosíntesis (amonio o nitratos), la relación entre <span class="math inline">\(r_{oa}\)</span> y <span class="math inline">\(r_{ca}\)</span> oscila entre 2.67 (sustrato amonio) y 3.47 (sustrato nitratos). Es decir, <span class="math inline">\(r_{oa} \approx 3r_{ca}\)</span>.</p>
+<p>En el balance de masa de fitoplancton se consideran los siguientes procesos:</p>
+<ul>
+<li>Fotosíntesis</li>
+<li>Respiración</li>
+<li>Muerte</li>
+<li>Sedimentación</li>
+</ul>
+<p>La masa de fitoplancton incrementa mediante el proceso de fotosíntesis, y se pierde mediante los procesos de respiración, muerte y sedimentación. En la ecuación de balance de masa del fitoplancton se considera un término fuente por cada uno de estos procesos:</p>
+<p><span class="math display" id="eq:Sa">\[\begin{equation} 
+S_A =S^{foto}_A - S^{resp}_A  -S^{muerte}_A - S^{sed}_A 
+
+  \tag{5.1}
+\end{equation}\]</span></p>
+<p>Dichos procesos se modelan mediante las formulaciones que se describen a continuación.</p>
 
 </div>
             </section>
@@ -115,8 +156,8 @@
           </div>
         </div>
       </div>
-<a href="modelo-de-temperatura.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="modelo-de-temperatura.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -147,7 +188,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Rpulqui/WQIber/edit/master/06-references.Rmd",
+"link": "https://github.com/Rpulqui/WQIber/edit/master/05-modelo_fitoplancton.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -155,7 +196,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Rpulqui/WQIber/blob/master/06-references.Rmd",
+"link": "https://github.com/Rpulqui/WQIber/blob/master/05-modelo_fitoplancton.Rmd",
 "text": null
 },
 "download": null,

@@ -1,3 +1,4 @@
+fig:esquema
 eq:transporte
 eq:Fdx
 eq:Fdy
@@ -11,6 +12,11 @@ eq:arrhenius
 eq:Salinidad
 eq:St
 eq:Q
+eq:Qcond
+eq:fv
+eq:qevap
+eq:fviento
+eq:eagua
 intro
 esquema-del-módulo-de-calidad-de-aguas
 ecuaciones-de-transporte
@@ -18,5 +24,10 @@ términos-de-dispersión-por-oleaje
 términos-fuente
 modelo-de-salinidad
 modelo-de-temperatura
-fig:rmarkdown
-fig:esquema
+radiación-neta-incidente
+radiación-de-onda-larga-emitida-por-el-agua
+calor-transferido-por-conducción-entre-el-aire-y-el
+transferencia-de-energía-en-la-evaporacióncondensación-del-agua
+fig:fitoplancton
+fitoplancton
+eq:Sa
