@@ -3,7 +3,7 @@
 Se denomina **fitoplancton** al conjunto de los organismos del plancton que tienen **capacidad fotosintética**. Se estudian como algas, pero se clasifican como bacterias o protistas. El grupo más grande que existe es el de las diatomeas.
 Esta comunidad de organismos microscópicos es la base de la cadena de alimentación de los ecosistemas acuáticos. Además, es el principal responsable de la producción de oxígeno en el planeta.
 
-```{r fitoplancton,echo=FALSE, out.width='80%', fig.align='center', fig.cap='El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que liberan contaminando los ecosistemas marinos'}
+```{r fitoplancton,echo=FALSE, out.width='80%', fig.align='center', fig.cap='El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que contaminan los ecosistemas marinos'}
 knitr::include_graphics("images/fitoplancton.jpg")
 ```
 
@@ -51,3 +51,72 @@ S_A =S^{foto}_A - S^{resp}_A  -S^{muerte}_A - S^{sed}_A
 \end{equation} 
 
 Dichos procesos se modelan mediante las formulaciones que se describen a continuación.
+
+## Fotosíntesis
+
+La fotosíntesis es el proceso químico a través del cual las plantas con clorofila transforman materia inorgánica (nutrientes) en materia orgánica gracias a la energía de la luz. En el caso del fitoplancton, los nutrientes son el amonio, nitratos, fosfatos y dióxido de carbono. Las reacciones químicas que representan el proceso de fotosíntesis son las siguientes (una u otra en función de si el sustrato para realizar la fotosíntesis es el amonio o los nitratos):
+
+\begin{equation} 
+
+106CO_2+16NH^+_4 + HPO^{2-}_4 + 106 H_{2}O \longrightarrow C_{106} H_{263} O_{110} N_{16} P + 106 O_2 + 14H^+
+ (\#eq:estq1)
+\end{equation} 
+
+\begin{equation} 
+
+106CO_2+16NO^-_4 + HPO^{2-}_4 + 122 H_{2}O + 18H^+ \longrightarrow C_{106} H_{263} O_{110} N_{16} P + 138 O_2
+ (\#eq:estq2)
+\end{equation} 
+
+
+En donde la primera reacción representa la fotosíntesis utilizando amonio como nutriente, y la segunda utilizando nitratos como nutriente.
+
+La fotosíntesis se representa en el balance de masa del fitoplancton mediante el siguiente término fuente:
+
+\begin{equation} 
+
+S^{foto}_A= \mu_{max} A F_{NPC} F_L \theta^{(T-20)}_4
+
+ (\#eq:Safoto)
+\end{equation} 
+
+
+
+donde $\mu_{max}$ es la máxima tasa de fotosíntesis a 20°C, A es la concentración de Chl-A, $F_{NPC}$ es el factor de atenuación de la fotosíntesis debido a carencia de nutrientes, $F_L$ es el factor de atenuación debido a carencia de luz, $𝑇$ es la temperatura del agua en $ºC$ y $\theta_4$ es el coeficiente de corrección por temperatura $(\theta_4 = 1.047)$. 
+
+El factor de atenuación por ausencia de nutrientes se calcula como:
+
+\begin{equation} 
+
+F_{NPC} = min(F_A, F_P, F_C)
+
+ (\#eq:FNPC)
+\end{equation} 
+
+
+\begin{equation} 
+F_N= \frac{N_{NH3}+N_{NO3}}{N_{NH3}+N_{NO3}+k_{snp}}
+ (\#eq:FN)
+\end{equation} 
+
+\begin{equation} 
+F_P= \frac{P_i}{P_i+k_{spp}}
+ (\#eq:Fp)
+\end{equation} 
+
+
+\begin{equation} 
+F_C= \frac{C_{tot}}{C_{tot}+k_{scp}}
+ (\#eq:Fp)
+\end{equation} 
+
+
+donde k_{snp}, k_{spp}, k_{scp} son las constantes de semi-saturación para la correción por ausencia de nitrógeno, fósforo y carbono.
+
+El factor de atenuación por ausencia de lusz se calcula como:
+
+\begin{equation} 
+F_L= \frac{1}{k_eh}Ln()
+ (\#eq:FL)
+\end{equation} 
+

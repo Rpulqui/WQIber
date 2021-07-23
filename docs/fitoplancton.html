@@ -84,9 +84,12 @@
 <li class="chapter" data-level="4.1" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#radiación-neta-incidente"><i class="fa fa-check"></i><b>4.1</b> Radiación neta incidente</a></li>
 <li class="chapter" data-level="4.2" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#radiación-de-onda-larga-emitida-por-el-agua"><i class="fa fa-check"></i><b>4.2</b> Radiación de onda larga emitida por el agua</a></li>
 <li class="chapter" data-level="4.3" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#calor-transferido-por-conducción-entre-el-aire-y-el"><i class="fa fa-check"></i><b>4.3</b> Calor transferido por conducción entre el aire y el</a></li>
-<li class="chapter" data-level="4.4" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#transferencia-de-energía-en-la-evaporacióncondensación-del-agua"><i class="fa fa-check"></i><b>4.4</b> Transferencia de energía en la evaporación/condensación del agua</a></li>
+<li class="chapter" data-level="4.4" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#transferencia-de-energía-en-la-evaporación-y-condensación-del-agua"><i class="fa fa-check"></i><b>4.4</b> Transferencia de energía en la evaporación y condensación del agua</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="fitoplancton.html"><a href="fitoplancton.html"><i class="fa fa-check"></i><b>5</b> Fitoplancton</a></li>
+<li class="chapter" data-level="5" data-path="fitoplancton.html"><a href="fitoplancton.html"><i class="fa fa-check"></i><b>5</b> Fitoplancton</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="fitoplancton.html"><a href="fitoplancton.html#fotosíntesis"><i class="fa fa-check"></i><b>5.1</b> Fotosíntesis</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -112,9 +115,9 @@
 <p>Se denomina <strong>fitoplancton</strong> al conjunto de los organismos del plancton que tienen <strong>capacidad fotosintética</strong>. Se estudian como algas, pero se clasifican como bacterias o protistas. El grupo más grande que existe es el de las diatomeas.
 Esta comunidad de organismos microscópicos es la base de la cadena de alimentación de los ecosistemas acuáticos. Además, es el principal responsable de la producción de oxígeno en el planeta.</p>
 <div class="figure" style="text-align: center"><span id="fig:fitoplancton"></span>
-<img src="images/fitoplancton.jpg" alt="El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que liberan contaminando los ecosistemas marinos" width="80%" />
+<img src="images/fitoplancton.jpg" alt="El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que contaminan los ecosistemas marinos" width="80%" />
 <p class="caption">
-Figure 5.1: El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que liberan contaminando los ecosistemas marinos
+Figure 5.1: El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que contaminan los ecosistemas marinos
 </p>
 </div>
 <p>El fitoplancton es uno de los componentes centrales del módulo de calidad de aguas ya que influye, por medio de los procesos de fotosíntesis, respiración y muerte, en los balances de masas de los siguientes componentes:</p>
@@ -149,7 +152,55 @@ S_A =S^{foto}_A - S^{resp}_A  -S^{muerte}_A - S^{sed}_A
   \tag{5.1}
 \end{equation}\]</span></p>
 <p>Dichos procesos se modelan mediante las formulaciones que se describen a continuación.</p>
+<div id="fotosíntesis" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Fotosíntesis</h2>
+<p>La fotosíntesis es el proceso químico a través del cual las plantas con clorofila transforman materia inorgánica (nutrientes) en materia orgánica gracias a la energía de la luz. En el caso del fitoplancton, los nutrientes son el amonio, nitratos, fosfatos y dióxido de carbono. Las reacciones químicas que representan el proceso de fotosíntesis son las siguientes (una u otra en función de si el sustrato para realizar la fotosíntesis es el amonio o los nitratos):</p>
+<p><span class="math display" id="eq:estq1">\[\begin{equation} 
 
+106CO_2+16NH^+_4 + HPO^{2-}_4 + 106 H_{2}O \longrightarrow C_{106} H_{263} O_{110} N_{16} P + 106 O_2 + 14H^+
+ \tag{5.2}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:estq2">\[\begin{equation} 
+
+106CO_2+16NO^-_4 + HPO^{2-}_4 + 122 H_{2}O + 18H^+ \longrightarrow C_{106} H_{263} O_{110} N_{16} P + 138 O_2
+ \tag{5.3}
+\end{equation}\]</span></p>
+<p>En donde la primera reacción representa la fotosíntesis utilizando amonio como nutriente, y la segunda utilizando nitratos como nutriente.</p>
+<p>La fotosíntesis se representa en el balance de masa del fitoplancton mediante el siguiente término fuente:</p>
+<p><span class="math display" id="eq:Safoto">\[\begin{equation} 
+
+S^{foto}_A= \mu_{max} A F_{NPC} F_L \theta^{(T-20)}_4
+
+ \tag{5.4}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(\mu_{max}\)</span> es la máxima tasa de fotosíntesis a 20°C, A es la concentración de Chl-A, <span class="math inline">\(F_{NPC}\)</span> es el factor de atenuación de la fotosíntesis debido a carencia de nutrientes, <span class="math inline">\(F_L\)</span> es el factor de atenuación debido a carencia de luz, <span class="math inline">\(𝑇\)</span> es la temperatura del agua en <span class="math inline">\(ºC\)</span> y <span class="math inline">\(\theta_4\)</span> es el coeficiente de corrección por temperatura <span class="math inline">\((\theta_4 = 1.047)\)</span>.</p>
+<p>El factor de atenuación por ausencia de nutrientes se calcula como:</p>
+<p><span class="math display" id="eq:FNPC">\[\begin{equation} 
+
+F_{NPC} = min(F_A, F_P, F_C)
+
+ \tag{5.5}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:FN">\[\begin{equation} 
+F_N= \frac{N_{NH3}+N_{NO3}}{N_{NH3}+N_{NO3}+k_{snp}}
+ \tag{5.6}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:Fp">\[\begin{equation} 
+F_P= \frac{P_i}{P_i+k_{spp}}
+ \tag{5.7}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:Fp">\[\begin{equation} 
+F_C= \frac{C_{tot}}{C_{tot}+k_{scp}}
+ \tag{5.7}
+\end{equation}\]</span></p>
+<p>donde k_{snp}, k_{spp}, k_{scp} son las constantes de semi-saturación para la correción por ausencia de nitrógeno, fósforo y carbono.</p>
+<p>El factor de atenuación por ausencia de lusz se calcula como:</p>
+<p><span class="math display" id="eq:FL">\[\begin{equation} 
+F_L= \frac{1}{k_eh}Ln()
+ \tag{5.8}
+\end{equation}\]</span></p>
+
+</div>
 </div>
             </section>
 

@@ -17,6 +17,15 @@ eq:fv
 eq:qevap
 eq:fviento
 eq:eagua
+fig:fitoplancton
+eq:Sa
+eq:estq1
+eq:estq2
+eq:Safoto
+eq:FNPC
+eq:FN
+eq:Fp
+eq:FL
 intro
 esquema-del-módulo-de-calidad-de-aguas
 ecuaciones-de-transporte
@@ -27,8 +36,6 @@ modelo-de-temperatura
 radiación-neta-incidente
 radiación-de-onda-larga-emitida-por-el-agua
 calor-transferido-por-conducción-entre-el-aire-y-el
-transferencia-de-energía-en-la-evaporacióncondensación-del-agua
-fig:fitoplancton
-fitoplancton
-eq:Sa
 transferencia-de-energía-en-la-evaporación-y-condensación-del-agua
+fitoplancton
+fotosíntesis
