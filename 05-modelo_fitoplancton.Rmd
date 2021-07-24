@@ -116,7 +116,9 @@ donde k_{snp}, k_{spp}, k_{scp} son las constantes de semi-saturación para la c
 El factor de atenuación por ausencia de lusz se calcula como:
 
 \begin{equation} 
-F_L= \frac{1}{k_eh}Ln()
+F_L= \frac{1}{k_eh}Ln \bigg(  \frac{k_{lp}+I}{k_{lp}+Ie^{-k_eh}}\bigg)
  (\#eq:FL)
 \end{equation} 
+
+
 

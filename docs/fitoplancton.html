@@ -24,7 +24,7 @@
 <meta name="author" content="Renán Pulquillanca" />
 
 
-<meta name="date" content="2021-07-23" />
+<meta name="date" content="2021-07-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -83,7 +83,7 @@
 <ul>
 <li class="chapter" data-level="4.1" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#radiación-neta-incidente"><i class="fa fa-check"></i><b>4.1</b> Radiación neta incidente</a></li>
 <li class="chapter" data-level="4.2" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#radiación-de-onda-larga-emitida-por-el-agua"><i class="fa fa-check"></i><b>4.2</b> Radiación de onda larga emitida por el agua</a></li>
-<li class="chapter" data-level="4.3" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#calor-transferido-por-conducción-entre-el-aire-y-el"><i class="fa fa-check"></i><b>4.3</b> Calor transferido por conducción entre el aire y el</a></li>
+<li class="chapter" data-level="4.3" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#calor-transferido-por-conducción-entre-el-aire-y-el-agua"><i class="fa fa-check"></i><b>4.3</b> Calor transferido por conducción entre el aire y el agua</a></li>
 <li class="chapter" data-level="4.4" data-path="modelo-de-temperatura.html"><a href="modelo-de-temperatura.html#transferencia-de-energía-en-la-evaporación-y-condensación-del-agua"><i class="fa fa-check"></i><b>4.4</b> Transferencia de energía en la evaporación y condensación del agua</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="fitoplancton.html"><a href="fitoplancton.html"><i class="fa fa-check"></i><b>5</b> Fitoplancton</a>
@@ -196,7 +196,7 @@ F_C= \frac{C_{tot}}{C_{tot}+k_{scp}}
 <p>donde k_{snp}, k_{spp}, k_{scp} son las constantes de semi-saturación para la correción por ausencia de nitrógeno, fósforo y carbono.</p>
 <p>El factor de atenuación por ausencia de lusz se calcula como:</p>
 <p><span class="math display" id="eq:FL">\[\begin{equation} 
-F_L= \frac{1}{k_eh}Ln()
+F_L= \frac{1}{k_eh}Ln \bigg(  \frac{k_{lp}+I}{k_{lp}+Ie^{-k_eh}}\bigg)
  \tag{5.8}
 \end{equation}\]</span></p>
 

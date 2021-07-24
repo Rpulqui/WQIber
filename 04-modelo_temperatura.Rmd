@@ -42,7 +42,7 @@ q_{br}=\varepsilon \sigma T^4
 
 donde $T$ es la temperatura del agua en grados Kelvin, $\varepsilon$ es el factor de emisividad del agua (=0.97) y $\sigma$ es la constante de Stefan-Boltzmann (=$5.669·10^{-8}$ $W/(m^2K^2)$)
 
-## Calor transferido por conducción entre el aire y el 
+## Calor transferido por conducción entre el aire y el agua
 
 El calor transferido por conducción se calcula mediante la siguiente expresión:
 
