@@ -1,14 +1,14 @@
 # Fitoplancton
 
 Se denomina **fitoplancton** al conjunto de los organismos del plancton que tienen **capacidad fotosintética**. Se estudian como algas, pero se clasifican como bacterias o protistas. El grupo más grande que existe es el de las diatomeas.
-Esta comunidad de organismos microscópicos es la base de la cadena de alimentación de los ecosistemas acuáticos. Además, es el principal responsable de la producción de oxígeno en el planeta.
+Esta comunidad de organismos microscópicos es la base de la cadena alimencticia de los ecosistemas acuáticos. Además, es el principal responsable de la producción de oxígeno en el planeta.
 
 ```{r fitoplancton,echo=FALSE, out.width='80%', fig.align='center', fig.cap='El desarrollo excesivo del fitoplancton provoca la acumulación de toxinas que contaminan los ecosistemas marinos'}
 knitr::include_graphics("images/fitoplancton.jpg")
 ```
 
 
-El fitoplancton es uno de los componentes centrales del módulo de calidad de aguas ya que influye, por medio de los procesos de fotosíntesis, respiración y muerte, en los balances de masas de los siguientes componentes: 
+El fitoplancton es uno de los componentes centrales del módulo de calidad de aguas, ya que influye, por medio de los procesos de fotosíntesis, respiración y muerte, en los balances de masas de los siguientes componentes: 
 
 + Oxígeno disuelto
 + Nitrógeno orgánico
