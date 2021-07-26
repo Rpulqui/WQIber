@@ -40,3 +40,10 @@ transferencia-de-energía-en-la-evaporación-y-condensación-del-agua
 fitoplancton
 fotosíntesis
 calor-transferido-por-conducción-entre-el-aire-y-el-agua
+respiración
+eq:respiracionFitoplancton
+eq:Foxp
+eq:SaMuerte
+muerte
+eq:SaSedimentacion
+sedimentación

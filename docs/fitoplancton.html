@@ -24,7 +24,7 @@
 <meta name="author" content="Renán Pulquillanca" />
 
 
-<meta name="date" content="2021-07-24" />
+<meta name="date" content="2021-07-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -89,6 +89,9 @@
 <li class="chapter" data-level="5" data-path="fitoplancton.html"><a href="fitoplancton.html"><i class="fa fa-check"></i><b>5</b> Fitoplancton</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="fitoplancton.html"><a href="fitoplancton.html#fotosíntesis"><i class="fa fa-check"></i><b>5.1</b> Fotosíntesis</a></li>
+<li class="chapter" data-level="5.2" data-path="fitoplancton.html"><a href="fitoplancton.html#respiración"><i class="fa fa-check"></i><b>5.2</b> Respiración</a></li>
+<li class="chapter" data-level="5.3" data-path="fitoplancton.html"><a href="fitoplancton.html#muerte"><i class="fa fa-check"></i><b>5.3</b> Muerte</a></li>
+<li class="chapter" data-level="5.4" data-path="fitoplancton.html"><a href="fitoplancton.html#sedimentación"><i class="fa fa-check"></i><b>5.4</b> Sedimentación</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -199,6 +202,48 @@ F_C= \frac{C_{tot}}{C_{tot}+k_{scp}}
 F_L= \frac{1}{k_eh}Ln \bigg(  \frac{k_{lp}+I}{k_{lp}+Ie^{-k_eh}}\bigg)
  \tag{5.8}
 \end{equation}\]</span></p>
+<p>donde <span class="math inline">\(k_{lp}\)</span> es la constante de semi-saturación para la corrección por ausencia de luz <span class="math inline">\((W/m^2)\)</span>, <span class="math inline">\(I\)</span> es la radiación solar incidente <span class="math inline">\((W/m^2)\)</span>, <span class="math inline">\(k_e\)</span> es la constante de extinción de la luz en el agua (1/m), y <span class="math inline">\(h\)</span> es el calado.</p>
+</div>
+<div id="respiración" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Respiración</h2>
+<p>La respiración del fitoplancton está representada por la reacción inversa a la fotosíntesis. Es un proceso en el cual se consume oxígeno disuelto y masa de fitoplancton, y se genera amonio, fosfatos y dióxido de carbono:</p>
+<p><span class="math display" id="eq:respiracionFitoplancton">\[\begin{equation} 
+C_{106}H_{263}O_{110}N_{16}P + 106O_2+ 14H^+ \longrightarrow  106CO_2 + 16NH^{+}_4 + HPO^{2-}_4 + 106H_{2}O 
+
+ \tag{5.9}
+\end{equation}\]</span></p>
+<p>El término fuente por el que se representa la respiración en la ecuación de conservación del fitoplancton es el siguiente:</p>
+<p><span class="math display" id="eq:Sa">\[\begin{equation} 
+
+S^{resp}_A = A k_{rp}F_{oxp}\theta^{(T-20)}_4
+ \tag{5.1}
+\end{equation}\]</span></p>
+<p>donde k_{rp} es la tasa de respiración del fitoplancton a <span class="math inline">\(20ºC\)</span>, F_{oxp} es el factor de atenuación dela respiración en condiciones de baja concentración de oxígeno disuelto, A es la concentración de Chl-A, <span class="math inline">\(T\)</span> es la temperatura del agua en <span class="math inline">\(ºC\)</span> y <span class="math inline">\(\theta_4\)</span> es el coeficiente de correción por temperatura (<span class="math inline">\(\theta_4\)</span>=1.047).</p>
+<p>El factor de atenuación por baja concentración de oxígeno disuelto se calcula como:</p>
+<p><span class="math display" id="eq:Foxp">\[\begin{equation} 
+
+F_{oxp}= \frac{OD}{OD+k_{sop}}
+ \tag{5.10}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(k_{sop}\)</span> es la constante de semisaturación para la corrección por concentraciones bajas de OD.</p>
+</div>
+<div id="muerte" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Muerte</h2>
+<p>La muerte de fitoplancton es un proceso por el cual disminuye la masa de fitoplancton y se genera nitrógeno orgánico y fósforo orgánico. Se representa en la ecuación de conservación del fitoplancton mediante el siguiente término fuente:</p>
+<p><span class="math display" id="eq:SaMuerte">\[\begin{equation} 
+S^{muerte}_{A}= A k_{dp} \theta^{(T-20)}_4
+ \tag{5.11}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(k_{dp}\)</span> es la tasa de muerte de fitoplancton a <span class="math inline">\(20ºC\)</span>, <span class="math inline">\(A\)</span> es la concentración de Chl-A, <span class="math inline">\(T\)</span> es la temperatura del agua en <span class="math inline">\(ºC\)</span> y <span class="math inline">\(\theta_4\)</span> esel coeficiente de corrección por temperatura (<span class="math inline">\(\theta_4=1.047\)</span>).</p>
+</div>
+<div id="sedimentación" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Sedimentación</h2>
+<p>La sedimentación del fitoplancton se modela mediante el siguiente término fuente:</p>
+<p><span class="math display" id="eq:SaSedimentacion">\[\begin{equation} 
+S^{sed}_{A}= A \frac{V_{sA}}{h}
+ \tag{5.12}
+\end{equation}\]</span></p>
+<p>donde <span class="math inline">\(V_{sA}\)</span> es la velocidad de sedimentación del fitoplancton, introducida por el usuario en <span class="math inline">\(m/d\)</span>, <span class="math inline">\(A\)</span> es la concentración de Chl-A y h es el calado.</p>
 
 </div>
 </div>
