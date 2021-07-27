@@ -47,3 +47,9 @@ eq:SaMuerte
 muerte
 eq:SaSedimentacion
 sedimentación
+eq:Norg
+nitrógeno
+nitrógeno-orgánico
+eq:Shidro
+eq:Namoniacal
+nitrógeno-amoniacal

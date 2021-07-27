@@ -1,0 +1,91 @@
+# Nitrógeno
+
+En el ciclo del nitrógeno se consideran tres compuestos:
+
++ Nitrógeno orgánico ($N_{org}$)
++ Nitrógeno amoniacal ($N-NH_3$)
++ Nitrógeno en forma de nitratos/nitritos ($N-NO_3$)
+
+El nitrógeno amoniacal incluye nitrógeno en forma de amoniaco (NH3) y de ión amonio (NH +). Los nitritos y nitratos se consideran de forma conjunta debido a la rapidez con la que generalmente los primeros se oxidan a nitratos. Para realizar el balance de los tres compuestos anteriores, se consideran los siguientes procesos:
+
++ Hidrólisis del nitrógeno orgánico (amonificación)
++ Nitrificación del amonio
++ Desnitrificación de los nitratos
++	Sedimentación del nitrógeno orgánico
++ Fotosíntesis del fitoplancton (consumo de nitrógeno amoniacal y nitratos)
++ Muerte del fitoplancton (generación de nitrógeno orgánico)
++ Respiración del fitoplancton (generación de nitrógeno amoniacal)
+
+Dichos procesos se modelan mediante las formulaciones que se describen a continuación.
+
+## Nitrógeno orgánico
+
+El término fuente considerado en la ecuación de conservación de masa del nitrógeno orgánico se puede escribir como:
+
+\begin{equation} 
+
+S_{Norg} = -S^{hidro}_{Norg} - S^{sed}_{Norg} + r_{na} S^{muerte}_A
+ (\#eq:Norg)
+\end{equation} 
+
+
+
+
+
+donde $S^{muerte}_A$ es la disminución de Chl-A por muerte del fitoplancton y $r_na$ en el ratio entre las masas de nitrógeno y Chl-A en el fitoplancton. El incremento de nitrógeno orgánico por muerte del fitoplancton solo se incluye si se modela el fitoplancton. En caso contrario dicho término no se considera como término fuente.
+
+La hidrólisis de nitrógeno orgánico en amonio se calcula como
+
+\begin{equation} 
+S^{hidro}_{Norg}= k_{hn} \theta^{(T-20)}_4 N_{org}
+ (\#eq:Shidro)
+\end{equation} 
+
+
+donde $k_{hn}$ es la constante de hidrólisis del nitrógeno orgánico en amonio a $20°C$, $T$ es la temperatura del agua en $ºC$, $N_{org}$ la concentración de nitrógeno orgánico y $\theta_4$ es el coeficiente de corrección por temperatura ($θ_4=1.047$).
+El proceso de sedimentación del nitrógeno orgánico se incluye en la ecuación de balance de masa como:
+
+\begin{equation} 
+S^{sed}_{Norg}=  \frac{V_{sN}}{h} N_{org} 
+ (\#eq:Shidro)
+\end{equation} 
+
+Donde $V_{sN}$ es la velocidad de sedimentación del nitrógeno orgánico (con valores habituales entre 0.001 y 0.1 m/d) y $ℎ$ es el calado.
+
+
+## Nitrógeno amoniacal
+
+Los procesos que afectan al nitrógeno amoniacal son el incremento de concentración por la hidrólisis del nitrógeno orgánico y la disminución de la misma por la nitrificación. La nitrificación es un proceso en dos fases mediante el cual los compuestos amoniacales se transforman en primer lugar en nitritos y posteriormente en nitratos. La primera fase de oxidación es realizado por bacterias nitrosomonas según la reacción química:
+
+
+\begin{equation} 
+NH^{+}_4  \frac{3}{2}O_2  \longrightarrow NO^{-}_2 + H_2O+ 2H^+
+
+ (\#eq:Namoniacal)
+\end{equation} 
+
+En este proceso de oxidación se consumen 3.43 g de oxígeno por cada gramo de nitrógeno amoniacal. Durante la segunda fase, las bacterias denominadas nitrobacter oxidan los nitritos a nitratos:
+
+\begin{equation} 
+NO^{-}_2 + \frac{1}{2}O_2 \longrightarrow NO^{-}_3
+
+ (\#eq:Namoniacal)
+\end{equation} 
+
+En esta segunda fase se consumen 1.14 g de oxígeno por cada gramo de nitrógeno en forma de nitritos. Si se combinan las dos reacciones, la oxidación completa del amonio a nitratos puede representarse por:
+
+\begin{equation} 
+NO^{-}_2 + \frac{1}{2}O_2 \longrightarrow NO^{-}_3
+
+ (\#eq:Namonio)
+\end{equation} 
+
+
+
+
+
+
+
+
+
+
