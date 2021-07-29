@@ -17,7 +17,7 @@ El fitoplancton es uno de los componentes centrales del módulo de calidad de ag
 + Fósforo orgánico e inorgánico
 + Carbono inorgánico
 
-En el caso de no existir fitoplancton o de no modelarse, los procesos anteriores no se consideran en el modelo, pudiéndose en cualquier caso calcular el resto de sustancias sin considerar el fitoplancton. Por lo tanto, no es imprescindible activar el módelo de fitoplancton para calcular el resto de componentes del módulo de calidad de aguas.
+En el caso de no existir fitoplancton o de no modelarse, los procesos anteriores no se consideran en el modelo, pudiéndose en cualquier caso calcular el resto de sustancias sin considerar el fitoplancton. Por lo tanto, no es imprescindible activar el módulo de fitoplancton para calcular el resto de componentes del módulo de calidad de aguas.
 
 El fitoplancton se representa en el modelo por medio de la concentración de clorofila-A (Chl-A). Si se modela el fitoplancton es necesario que el usuario defina su estequiometría, i.e. la relación entre nitrógeno, fósforo, carbono y Chl-A en el fitoplancton, ya que de ello dependen los balances de masa de dichos componentes del modelo. Los ratios que es necesario definir son los siguiente:
 
